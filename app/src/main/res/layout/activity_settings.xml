@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.udacity.popular_movies.SettingsActivity"
-    tools:showIn="@layout/activity_settings"
     android:background="@drawable/mypattern"
     >
 
@@ -15,12 +15,12 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <android.support.v7.widget.Toolbar
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
+         android:background="?attr/colorPrimary"
+         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -29,85 +29,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settingsmsg"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:paddingLeft="@dimen/txtPadding"
+        android:paddingTop="@dimen/txtPadding"
+        android:textSize="@dimen/txtSize"
         />
 
-    <TextView
-        android:id="@+id/threshold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/threshold"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsmsg"
-        />
-
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="0dp"
-        android:layout_height="16dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:progressDrawable="@drawable/custom_progress"
-        android:thumbTint="#00f"
-        app:layout_constraintEnd_toStartOf="@+id/max"
-        app:layout_constraintStart_toEndOf="@+id/min"
-        app:layout_constraintTop_toBottomOf="@+id/threshold" />
-
-    <TextView
-        android:id="@+id/min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="@string/min"
-        app:layout_constraintRight_toLeftOf="@+id/seekBar1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/seekBar1" />
-
-    <TextView
-        android:id="@+id/max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:text="@string/max"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/seekBar1"
-        app:layout_constraintTop_toTopOf="@+id/seekBar1" />
-
-    <View
-        android:id="@+id/horizline"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintTop_toBottomOf="@id/seekBar1"/>
-
-    <TextView
-        android:id="@+id/lightsensor"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/lightsensor"
-        android:textSize="14sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizline" />
+        android:paddingLeft="@dimen/txtPadding"
+    >
+        <RadioButton
+            android:id="@+id/radioPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/txtPadding"
+            android:text="@string/popular" />
+
+        <RadioButton
+            android:id="@+id/radioRated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/txtPadding"
+            android:text="@string/rated" />
+    </RadioGroup>
 
 
-
-
-
-
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
